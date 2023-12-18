@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CRUD</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="container-fluid w-75 bg-dark p-5" style="color: white">
+            <h1 class="text-center">C R U D System</h1>
+            <div>
+                <label for="productname">Product Name</label>
+                <input
+                    type="text"
+                    id="productname"
+                    oninput="chekNameValidate()"
+                    class="form-control"
+                />
+                <p class="alert alert-danger d-none" id="invalidMess">
+                    Add the first letter is capital and from 5 to 10 letter
+                </p>
+            </div>
+            <div>
+                <label for="productprice">Product price</label>
+                <input
+                    type="number"
+                    id="productprice"
+                    oninput="chekPriceValidate()"
+                    class="form-control"
+                />
+                <p class="alert alert-danger d-none" id="invalidMessP">
+                    Add From 1 to 6 number
+                </p>
+            </div>
+            <div>
+                <label for="productcategory">Product category</label>
+                <input
+                    type="text"
+                    id="productcategory"
+                    oninput="chekCatValidate()"
+                    class="form-control"
+                />
+                <p class="alert alert-danger d-none" id="invalidMessC">Add Category</p>
+            </div>
+            <div>
+                <label for="productdescription">Product description</label>
+                <textarea
+                    oninput="chekDescValidate()"
+                    id="productdescription"
+                    class="form-control"
+                ></textarea>
+                <p class="alert alert-danger d-none" id="invalidMessD">
+                    Add Description
+                </p>
+            </div>
+            <button
+                class="btn btn-danger my-3 form-control"
+                onclick="Add()"
+                id="btnAdd"
+            >
+                Add Product
+            </button>
+            <button
+                class="btn btn-danger my-3 form-control d-none"
+                id="btnUpdate"
+                onclick="Update()"
+            >
+                Update Product
+            </button>
+
+            <input
+                oninput="SearchP()"
+                type="search"
+                placeholder="Search..."
+                class="my-4 bg-dark-subtle form-control w-75 mx-auto"
+                id="Search"
+            />
+
+            <table class="table rounded-2 table-info text-center">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="table"></tbody>
+            </table>
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/mainjs.js"></script>
+    </body>
+</html>
